@@ -6,98 +6,97 @@
     margin-right: auto;
     }
 @media (min-width: 576px) {
-.container-sm {
+.container {
     max-width: 540px;
 }
 }
 @media (min-width: 768px) {
-.container-md {
+.container{
     max-width: 720px;
 }
 }
 @media (min-width: 992px) {
-.container-lg {
+.container {
     max-width: 960px;
 }
 }
 @media (min-width: 1200px) {
-.container-xl {
+.container {
     max-width: 1140px;
 }
 }
 @media (min-width: 1400px) {
-.container-xxl {
+.container {
     max-width: 1320px;
 }
 } 
-.image {
-    position: relative; 
+
+@media (max-width: 1200px) {
+    .image .container {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
 }
-.img-text {
-    position: absolute; 
-    top: 70%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust origin to the center */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    color: #fff; /* White text color */
-    text-align: center; /* Center the text */
-    padding: 20px; /* Add padding around the text */
-    border-radius: 10px; /* Optional: Rounded corners */
-    width: 70%; /* Control the width of the text box */
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
 }
-.btn-light:hover {
-    color: #fff;
-    border: 1px solid #30a476; 
-    background-color: #30a476; 
+
+/* navbar */
+.social-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
-.button-group {
-    display: flex; 
-    justify-content: center; 
-    gap: 20px; 
-    margin-bottom: 30px; 
-}      
+
+/* For large screens, social icons are in the navbar */
+@media (min-width: 992px) {
+    .social-icons.d-lg-none {
+        display: none; 
+    }
+}
+
+/* For small screens, align social icons before the hamburger */
+@media (max-width: 991.98px) {
+    .social-icons.d-lg-flex {
+        display: none; 
+    }
+}
+
+.navbar li, .navbar a, h2{
+    text-transform: uppercase;
+}
+
+.navbar span{
+    color: green;
+}
+
+/* hero image */
+.carousel-caption .btn {
+    display: inline-block;
+    border: 3px solid green; 
+}
+
+.carousel-caption {
+    border-top: 4px solid green;
+    border-radius: 10px; 
+}
+
 .link_text{
     text-decoration: none;
 }
 
-#services{
-    display: block;
-}
-.section-title h2:before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 160px;
-    height: 1px;
-    background: 
-color-mix(in srgb, pink, transparent 60%);
-    left: 0;
-    right: 0;
-    bottom: 1px;
-    margin: auto;
-}
-.section-title h2::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: black;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-}
 .bi-check-circle{
     color:green;
 }
 
-/* Responsive about section */
+/* About */
 @media (min-width: 768px) {
     .about_container {
         position: relative;
         width: 100%;
-        top: 2%;
+        top: 7%;
         left: 0%;
     }
     .about_text{
@@ -108,15 +107,14 @@ color-mix(in srgb, pink, transparent 60%);
         width: 67%;
         /* margin-left: 2%; */
         font-size: 28px;
-        /* text-align: center; */
     }
     .about_img img {
         position: absolute;
-        margin-top: -108%;
+        margin-top: -231%;
         /* margin-top: -65%; */
-        margin-left: 48%;
+        margin-left: 95%;
         height: auto;
-        width: 50%;
+        /* width: 100%; */
     }
 }
 
@@ -125,10 +123,10 @@ color-mix(in srgb, pink, transparent 60%);
     .about_img img {
         position: absolute;
         /* margin-top: -108%; */
-        margin-top: -65%;
-        margin-left: 48%;
-        height: auto;
-        width: 50%;
+        margin-top: -130%;
+        margin-left: 95%;
+        height: 100%;
+        /* width: 100%; */
     }
 }
 
@@ -138,22 +136,151 @@ color-mix(in srgb, pink, transparent 60%);
         position: relative;
         width: 100%;
         top: 9%;
-        left: 18%;
+        left: 15%;
     }
     .about_text{
         width:50%;
     }
     #about h1 {
         margin-top: -14%;
-        margin-left: 19%;
+        margin-left: 18%;
         font-size: 40px;
     }
     .about_img img {
         position: absolute;
-        margin-top: -6%;
-        margin-left: -5%;
-        width: 50%;
-        height: auto;
-        width: 50%;
+        object-fit: cover;
+        margin-top: -12%;
+        margin-left: -17%;
+        width: 100%;
+        height: 100%;
     }
+}
+
+/* Services*/
+#services{
+    display: block;
+}
+
+/* portfolio */
+.portfolio .button-group li:hover, .portfolio .button-group li.filter-active {
+    color: white;
+    background-color: green;
+}
+
+.portfolio .button-group{
+    text-align: center;
+}
+
+.portfolio .button-group li{
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 20px 10px 20px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-item {
+    position: relative; 
+    overflow: hidden; 
+}
+
+.portfolio-item .portfolio-hover {
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -100%;
+    z-index: 3;
+    transition: all ease-in-out 0.5s;
+    background: color-mix(in srgb, white, transparent 10%);
+    padding: 15px;
+}
+
+.portfolio-item:hover .portfolio-hover {
+    opacity: 1;
+    bottom: 0px;
+}
+
+.portfolio .portfolio-item .portfolio-hover .details-link {
+    right: 14px;
+    font-size: 28px;
+}
+
+.portfolio-hover h4 {
+    font-size: 18px;
+    padding-right: 50px;
+}
+
+/* .btn-active:hover {
+    color: #fff;
+    border: 1px solid #30a476; 
+    background-color: #30a476; 
+} */
+
+.portfolio .portfolio-img{
+    overflow: hidden;
+    }
+
+@media (min-width: 1399px) {
+    .about_container {
+        position: relative;
+        width: 100%;
+        top: 9%;
+        left: 18%;
+    }
+}
+
+/* client */
+.client-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e0e0e0; 
+    border-radius: 6px; 
+    padding: 15px; 
+    background-color: #fff; 
+    height: 100px; 
+}
+
+.client-logo img {
+    max-width: 50%;
+    max-height: 80px; 
+    object-fit: contain; 
+    transition: 0.3s;
+}
+
+.row.g-0 {
+    margin-right: 0;
+    margin-left: 0; 
+}
+
+.col-6, .col-md-3 {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* Under client & portfolio line */
+.section-title h2 {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background:green;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
