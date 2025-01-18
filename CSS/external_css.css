@@ -50,6 +50,14 @@
     align-items: center;
 }
 
+.social-icons i {
+    margin-right: 0;  /* No margin between icons */
+}
+
+.navbar-toggler {
+    margin-left: 0;  /* Remove any left margin on the hamburger */
+}
+
 /* For large screens, social icons are in the navbar */
 @media (min-width: 992px) {
     .social-icons.d-lg-none {
@@ -247,8 +255,8 @@
 }
 
 .client-logo img {
-    max-width: 50%;
-    max-height: 80px; 
+    max-width: 40%;
+    max-height: 50px; 
     object-fit: contain; 
     transition: 0.3s;
 }
@@ -283,4 +291,40 @@
     right: 0;
     bottom: 0;
     margin: auto;
+}
+
+/* footer */
+.footer {
+    background-color: black;
+    font-size: 14px;
+}
+
+.footer .credits {
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.copyright {
+    padding: 25px 0;
+    border-top: 1px solid 
+    color-mix(in srgb, white, transparent 90%);
+}
+
+.scroll-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.scroll-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+    background-color: green;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
 }
